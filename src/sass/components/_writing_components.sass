@@ -1,0 +1,21 @@
+@mixin textDirection($language)
+  @if $language == "ltr" 
+    direction: ltr
+    writing-mode: horizontal-tb
+  @else if $language == "rtl" 
+    direction: rtl
+    writing-mode: horizontal-tb
+  @else if $language == "vertical" 
+    direction: ltr
+    writing-mode: vertical-rl
+  
+.text 
+  @include textDirection("ltr")
+
+
+.arabic-text 
+  @include textDirection("rtl")
+
+
+.japanese-text 
+  @include textDirection("vertical")

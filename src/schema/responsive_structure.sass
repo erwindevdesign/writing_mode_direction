@@ -1,0 +1,76 @@
+@import "../sass/components/bootstrap_reboot.scss"
+@import "../sass/components/breakpoints.scss"
+@import "../sass/components/grids.scss"
+
+@import "../sass/components/writing_components.sass"
+@import "../sass/components/responsive_fonts.sass"
+
+@import url('https://fonts.googleapis.com/css2?family=LAto&display=swap')
+
+body
+    margin: 0
+
+.container
+    //position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    padding: 45px
+    @include media(mobile)
+        padding: 0
+    &__flex
+        box-sizing: border-box
+        display: flex
+        align-items: center
+        max-height: 100vh
+        padding: 5% 75px 55px 55px
+        flex-direction: column
+        outline: none
+        @include media(mobile)
+            padding: 30px
+                   
+.hero
+    height: auto
+    &__title
+        font-family: 'Lato', sans-serif
+        @include font-size(40px)
+    &__subtitle
+        font-family: 'Lato', sans-serif
+        @include font-size(20px)
+
+.content
+    //- display: grid
+    //- grid-template-columns: repeat(auto-fit, minmax(450px, 1fr))
+    //- gap: 16px
+    //- align-content: center
+    //- justify-items: center
+    //- width: 100%
+    //- height: 100%
+    width: 90vw
+    height: auto
+    background: pink
+    // add flexbox style
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    flex-flow: wrap
+    max-width: 1000px
+    @include media(mobile)
+        width: 90vw
+    @include media(tablet)
+        width: 65vw
+    &__section  
+        //- width: 100%
+        //- height: 32vh
+        width: 47%
+        height: 300px
+        margin: 10px
+        box-sizing: border-box
+        background-color: red
+
+        @include media(desktop)
+            width: 47%
+        @include media(mobile)
+            width: 80%
+            
