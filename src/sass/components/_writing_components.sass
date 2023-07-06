@@ -5,17 +5,23 @@
   @else if $language == "rtl" 
     direction: rtl
     writing-mode: horizontal-tb
-  @else if $language == "vertical" 
+  @else if $language == "vertical-ltr" 
+    direction: ltr
+    writing-mode: vertical-lr
+    letter-spacing: 0.05rem
+    text-orientation: upright
+  @else if $language == "vertical-rtl" 
     direction: ltr
     writing-mode: vertical-rl
-  
-.text 
-  @include textDirection("ltr")
-
-
-.arabic-text 
-  @include textDirection("rtl")
-
-
-.japanese-text 
-  @include textDirection("vertical")
+    letter-spacing: 0.07rem
+    text-orientation: upright
+    
+@mixin writing($mode)
+    @if $mode == latin 
+      @include textDirection("ltr")
+    @else if  $mode == arabe
+      @include textDirection("rtl")
+    @else if  $mode == japanese
+      @include textDirection("vertical-ltr")
+    @else if  $mode == chinese
+      @include textDirection("vertical-rtl")

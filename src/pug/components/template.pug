@@ -1,0 +1,10 @@
+include config.pug
+doctype html 
+html(lang="es") 
+    include head.pug
+    body
+        .container 
+            .container__flex
+                include header.pug
+                block content
+                include footer.pug

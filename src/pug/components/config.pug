@@ -1,0 +1,16 @@
+mixin content(writingMode, title, text, mode)
+    .content__section 
+        h3.section__title #{writingMode}
+        p.first__text Line Orientation
+        figure.img__text--skinny-row 
+            ion-icon(name="arrow-forward-outline") 
+            ion-icon(name="arrow-forward-outline") 
+            ion-icon(name="arrow-forward-outline") 
+        p.second__text Block Flow Direction
+        figure.img__text--strong-row  
+            ion-icon(name="caret-down-outline") 
+            ion-icon(name="caret-down-outline") 
+            ion-icon(name="caret-down-outline")
+        .example
+            h2.example__title #{title}
+            p(id=mode).example__text #{text}

@@ -45,7 +45,7 @@ This project was created with the following technologies:
 
 
 
-##
+## Habilidades
 
 - HTML semantico
   * flexbox
