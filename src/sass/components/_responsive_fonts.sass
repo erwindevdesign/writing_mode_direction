@@ -1,0 +1,8 @@
+@function calculateRem($size)
+    $remSize: calc($size / 16px)
+    @return calc($remSize * 1rem)
+
+@mixin font-size($size)
+    font-size: $size
+    font-size: calculateRem($size)
+    line-height: calc(calculateRem($size)*1.5)

@@ -1,5 +1,6 @@
+/* Reboot Codes - Based on normalize.css v5.0.0
+**********************/
 @import url("https://fonts.googleapis.com/css2?family=LAto&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -454,9 +455,27 @@ output {
   display: none !important;
 }
 
+
+/* Media Queries Mixin
+**********************/
+.text {
+  direction: ltr;
+  writing-mode: horizontal-tb;
+}
+
+.arabic-text {
+  direction: rtl;
+  writing-mode: horizontal-tb;
+}
+
+.japanese-text {
+  direction: ltr;
+  writing-mode: vertical-rl;
+}
+
+/* responsive fonts */
 body {
   margin: 0;
-  color: #121212;
 }
 
 .container {
@@ -464,221 +483,78 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  padding: 45px;
+}
+@media screen and (max-width: 1000px) {
+  .container {
+    padding: 0;
+  }
 }
 .container__flex {
   box-sizing: border-box;
   display: flex;
   align-items: center;
   max-height: 100vh;
-  padding: 3%;
+  padding: 5% 75px 55px 55px;
   flex-direction: column;
   outline: none;
+}
+@media screen and (max-width: 1000px) {
+  .container__flex {
+    padding: 30px;
+  }
 }
 
 .hero {
   height: auto;
 }
 .hero__title {
-  font-family: "Satisfy", cursive;
+  font-family: "Lato", sans-serif;
   font-size: 40px;
   font-size: 2.5rem;
   line-height: 3.75rem;
-  text-align: center;
 }
 .hero__subtitle {
   font-family: "Lato", sans-serif;
-  font-size: 17px;
-  font-size: 1.0625rem;
-  line-height: 1.59375rem;
-  text-align: center;
-  color: #121212;
-  opacity: 60%;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
 }
 
 .content {
-  width: 100%;
+  width: 90vw;
   height: auto;
-  max-width: 350px;
+  background: pink;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-flow: wrap;
+  max-width: 1000px;
+}
+@media screen and (max-width: 1000px) {
+  .content {
+    width: 90vw;
+  }
 }
 @media only screen and (min-width: 768px) {
   .content {
-    max-width: 1110px;
+    width: 65vw;
   }
 }
 .content__section {
-  width: 100%;
-  height: 100%;
-  min-height: 220px;
-  max-height: 590px;
-  margin-block: 5px;
+  width: 47%;
+  height: 300px;
+  margin: 10px;
   box-sizing: border-box;
-  padding-inline: 10px;
-  border: 1px solid gray;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr 6fr;
-  grid-template-rows: 1fr 1fr 1fr 6fr;
+  background-color: red;
 }
-@media only screen and (min-width: 768px) {
+@media screen and (max-width: 1480px) {
   .content__section {
-    width: 48%;
-    height: 50vh;
-    max-height: 350px;
-    max-width: 600px;
-    margin-block: 20px;
-    min-height: 100px;
-    margin-block: 10px;
+    width: 47%;
   }
 }
-
-.section__title {
-  text-align: center;
-  margin-block-start: 5px;
-  font-family: "Satisfy", cursive;
-  font-size: 30px;
-  font-size: 1.875rem;
-  line-height: 2.8125rem;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1/3;
-}
-
-.first__text {
-  text-align: center;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-}
-
-.img__text--skinny-row {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-}
-
-.second__text {
-  text-align: center;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-}
-
-.img__text--strong-row {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-}
-
-.example {
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 1;
-  grid-row: 4/5;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1/3;
-  overflow: hidden;
-  justify-content: center;
-  direction: ltr;
-  writing-mode: horizontal-tb;
-}
-.example__title {
-  text-align: center;
-  font-size: 22px;
-  font-size: 1.375rem;
-  line-height: 2.0625rem;
-}
-.example__text {
-  height: 75%;
-  width: 95%;
-}
-#latin {
-  direction: ltr;
-  writing-mode: horizontal-tb;
-}
-
-#arabe {
-  direction: rtl;
-  writing-mode: horizontal-tb;
-}
-
-#japanese {
-  direction: ltr;
-  writing-mode: vertical-lr;
-  letter-spacing: 0.05rem;
-  text-orientation: upright;
-}
-
-#chinese {
-  direction: ltr;
-  writing-mode: vertical-rl;
-  letter-spacing: 0.07rem;
-  text-orientation: upright;
-}
-
-ion-icon {
-  font-size: 32px;
-  font-size: 2rem;
-  line-height: 3rem;
-}
-
-.img__text--strong-row,
-.img__text--skinny-row {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.content__section:nth-child(2) .img__text--skinny-row {
-  transform: rotate(180deg);
-}
-
-.content__section:nth-child(3) .img__text--strong-row ion-icon {
-  transform: rotate(270deg);
-}
-
-.content__section:nth-child(3) .img__text--skinny-row ion-icon {
-  transform: rotate(90deg);
-}
-
-.content__section:nth-child(4) .img__text--strong-row ion-icon {
-  transform: rotate(90deg);
-}
-
-.content__section:nth-child(4) .img__text--skinny-row ion-icon {
-  transform: rotate(90deg);
-}
-
-.cta {
-  margin-inline: 5%;
-  text-decoration: none;
-}
-
-.signature {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  color: #121212;
-  opacity: 60%;
-  font-family: "Lato", sans-serif;
+@media screen and (max-width: 1000px) {
+  .content__section {
+    width: 80%;
+  }
 }
