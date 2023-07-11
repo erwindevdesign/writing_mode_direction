@@ -1,13 +1,12 @@
-
 $gross-font: 'Satisfy', cursive
 $skinny-font: 'Lato', sans-serif
 $dark-color: #121212
 
-@import "bootstrap_reboot.scss"
-@import "breakpoints.scss"
-@import "grids.scss"
-@import "writing_components.sass"
-@import "responsive_fonts.sass"
+@import "../sass/components/bootstrap_reboot.scss"
+@import "../sass/components/breakpoints.scss"
+@import "../sass/components/grids.scss"
+@import "../sass/components/writing_components.sass"
+@import "../sass/components/responsive_fonts.sass"
 @import url('https://fonts.googleapis.com/css2?family=LAto&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap' )
 
@@ -27,3 +26,9 @@ body
         padding: 3%
         flex-direction: column
         outline: none
+
+.text
+    //@include writing(latin)
+    //@include writing(arabe)
+    //@include writing(japanese)
+    @include writing(chinese)
